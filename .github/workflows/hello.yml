@@ -1,0 +1,19 @@
+name: Build Hello World
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create Hello World script
+      run: echo "echo 'Hello, World!'" > hello.sh
+
+    - name: Display Hello World
+      run: bash hello.sh
