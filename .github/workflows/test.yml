@@ -11,8 +11,13 @@ jobs:
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: 18.x
+          node-version: "18.x"
       - name: Install dependencies
         run: npm install
       - name: Run tests
         run: npm test
+      - name: Upload The test Report to Artfacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-report-artifact
+          path: test-report.html
