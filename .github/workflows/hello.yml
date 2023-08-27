@@ -1,0 +1,11 @@
+name: Dislay Hello World every Minute
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo "Hello World"
