@@ -1,4 +1,4 @@
-name: Testing my workflow with Jest
+name: Test
 on:
   push:
     branches: [main]
