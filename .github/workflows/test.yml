@@ -1,23 +1,23 @@
-name: Testing my workflow with Jest
+name: Runing Tests Using Jest
 on:
   push:
     branches: [main]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+      - name: Copy or Checkout Your Repository code
+        uses: actions/checkout@v2
+      - name: Set up Node js
+        uses: actions/setup-node@v2
         with:
           node-version: "18.x"
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
-      - name: Run tests
+      - name: Run Tests
         run: npm test
-      - name: Upload The test Report to Artfacts
+      - name: Upload The Results as artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: test-report-artifact
-          path: test-report.html
+          name: Test Report
+          path: ./test-report
