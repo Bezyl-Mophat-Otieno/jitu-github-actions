@@ -1,4 +1,4 @@
-name: Runing Tests Using Jest
+name: Test
 on:
   push:
     branches: [main]
